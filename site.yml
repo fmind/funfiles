@@ -1,0 +1,14 @@
+---
+
+- hosts: localhost
+
+  roles:
+    - {role: conda, tags: ['conda', 'shell']}
+    - {role: docker, tags: ['docker', 'service']}
+    - {role: emacs, tags: ['emacs', 'editor']}
+    - {role: fish, tags: ['fish', 'shell']}
+    - {role: mongodb, tags: ['mongodb', 'service']}
+    - {role: redis, tags: ['redis', 'service']}
+    - {role: vim, tags: ['vim', 'editor']}
+    - {role: vscode, tags: ['vscode', 'editor']}
+    - {role: zsh, tags: ['zsh', 'shell']}

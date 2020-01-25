@@ -1,0 +1,11 @@
+" INITS
+set nocompatible
+set shortmess=I
+" FILES
+set nobackup
+set noswapfile
+" LINES
+set number
+set relativenumber
+" COLORS
+colorscheme slate
