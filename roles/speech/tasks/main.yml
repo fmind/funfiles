@@ -1,0 +1,26 @@
+---
+
+- name: dependencies
+  package:
+    name: "{{ packages }}"
+  vars:
+    packages:
+      - swig
+      - pocketsphinx
+      - python3-pyaudio
+  become: true
+  tags: admin
+
+- name: recognizer
+  pip:
+    name: pocketsphinx
+    executable: pip3
+    extra_args: --user
+  tags: user
+
+- name: package
+  pip:
+    name: SpeechRecognition
+    executable: pip3
+    extra_args: --user
+  tags: user

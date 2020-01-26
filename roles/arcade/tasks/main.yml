@@ -1,0 +1,19 @@
+---
+
+- name: dependencies
+  package:
+    name: "{{ packages }}"
+  vars:
+    packages:
+      - zlib1g-dev
+      - libjpeg-dev
+      - python-gst-1.0
+  become: true
+  tags: admin
+
+- name: package
+  pip:
+    name: arcade
+    executable: pip3
+    extra_args: --user
+  tags: user

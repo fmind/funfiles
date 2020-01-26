@@ -1,0 +1,20 @@
+---
+
+- name: dependencies
+  package:
+    name: "{{ packages }}"
+  vars:
+    packages:
+      - sox
+      - ffmpeg
+      - libcairo2
+      - libcairo2-dev
+  become: true
+  tags: admin
+
+- name: package
+  pip:
+    name: manimlib
+    executable: pip3
+    extra_args: --user
+  tags: user
