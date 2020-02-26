@@ -386,7 +386,7 @@
   (progn ;; ipython
     (spacemacs/set-leader-keys
       "ay" 'ein:notebooklist-open
-      "ai" 'python-start-or-switch-repl)
+      "ar" 'python-start-or-switch-repl)
     (spacemacs/set-leader-keys-for-major-mode 'ein:notebook-multilang-mode-map
       "s" 'ein:notebook-save-notebook-command) ;; fix a bug in master version
     (evil-define-key 'hybrid ein:notebook-multilang-mode-map
