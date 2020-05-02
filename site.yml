@@ -2,12 +2,24 @@
 
 - hosts: localhost
 
+  pre_tasks:
+
+  - name: ensure ~/bin
+    file:
+      name: ~/bin
+      state: directory
+    tags: user
+
+  - name: ensure pip3
+    package:
+      name: python3-pip
+    become: true
+    tags: admin
+
   roles:
-    - {role: conda, tags: ['conda', 'shell']}
-    - {role: docker, tags: ['docker', 'service']}
-    - {role: emacs, tags: ['emacs', 'editor']}
-    - {role: mongodb, tags: ['mongodb', 'service']}
-    - {role: redis, tags: ['redis', 'service']}
-    - {role: vim, tags: ['vim', 'editor']}
-    - {role: vscode, tags: ['vscode', 'editor']}
-    - {role: zsh, tags: ['zsh', 'shell']}
+    - {role: arcade, tags: ['arcade', 'game']}
+    - {role: foxdot, tags: ['foxdot', 'sound']}
+    - {role: manim, tags: ['manim', 'image']}
+    - {role: pyxel, tags: ['pyxel', 'game']}
+    - {role: renpy, tags: ['renpy', 'text']}
+    - {role: speech, tags: ['speech', 'sound']}
